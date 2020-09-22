@@ -8,6 +8,7 @@ sap.ui.controller("Prototype_AdoptCoA.ext.controller.ListReportExt", {
 		this.getOwnerComponent().getAppComponent().setExtensionAPI(this.extensionAPI);
 	},
 
+
 	onDownload: function (oEvent) {
 
 		this.onClickActionAdoptCoA1();
