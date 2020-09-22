@@ -1,0 +1,154 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="cds_zjs_adopt_coa" xml:lang="de" sap:schema-version="1">
+			<EntityType Name="I_FsvHierarchyInCoaType" sap:label="Bilanz/GuV-Struktur auf Kontenplanbasis" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="HierarchyNodeUniqueID"/><PropertyRef Name="FinancialStatementVariant"/><PropertyRef Name="ChartOfAccounts"/></Key><Property Name="HierarchyNodeUniqueID" Type="Edm.String" Nullable="false" MaxLength="50"/><Property Name="FinancialStatementVariant" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase"
+					sap:label="Bilanz/GuV-Struktur"/><Property Name="ChartOfAccounts" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Kontenplan"
+					sap:quickinfo="Bilanz/GuV-Struktur verwendet nur einen Kontenplan (opt.)"/><Property Name="ParentNodeUniqueID" Type="Edm.String" MaxLength="50"/><Property Name="FinancialStatementItem" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Bil/GuV-Pos."
+					sap:quickinfo="Bilanz/GuV-Position"/><Property Name="GLAccount" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Sachkonto"
+					sap:quickinfo="Nummer des Sachkontos"/><Property Name="FunctionalArea" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:label="Funktionsbereich"/><Property Name="FinStatementHierarchyLevelVal" Type="Edm.Int32"/><Property Name="NodeType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Typ" sap:quickinfo="Knotentyp"/><Property Name="HierarchyNodeDescription" Type="Edm.String" MaxLength="50"/><Property Name="IsDebitBalanceRelevant" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Sollsaldo"
+					sap:quickinfo="Kennzeichen: Eintrag ist bei Sollsaldo relevant ?"/><Property Name="IsCreditBalanceRelevant" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Habensaldo"
+					sap:quickinfo="Kennzeichen: Eintrag ist bei Habensaldo relevant ?"/><Property Name="OffsettingItem" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="PosSchlHaben"
+					sap:quickinfo="Positionsschlüssel Haben"/><Property Name="HierarchyNode" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="Id"
+					sap:quickinfo="Intern: Id eines Knotens"/><Property Name="SiblingNode" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="Id"
+					sap:quickinfo="Intern: Id eines Knotens"/><Property Name="GLAcctHierarchyNodeCategory" Type="Edm.String" MaxLength="2"/><Property Name="DrillDownIsImpossible" Type="Edm.String" MaxLength="8"/><Property Name="CorporateGroupAccount" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Konzernkontonummer"/><Property Name="CorporateGroupChartOfAccounts" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Konzernkontenplan"/><Property Name="SemanticTag" Type="Edm.String" MaxLength="1333"/></EntityType>
+			<EntityType Name="AdoptCoAType" sap:content-version="1">
+				<Key><PropertyRef Name="HierarchyNodeUniqueID"/><PropertyRef Name="FinancialStatementVariant"/><PropertyRef Name="ChartOfAccounts"/></Key><Property Name="HierarchyNodeUniqueID" Type="Edm.String" Nullable="false" MaxLength="50"/><Property Name="FinancialStatementVariant" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase"
+					sap:label="Bilanz/GuV-Struktur" sap:value-list="standard"/><Property Name="ChartOfAccounts" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Kontenplan"
+					sap:quickinfo="Bilanz/GuV-Struktur verwendet nur einen Kontenplan (opt.)" sap:value-list="standard"/><Property Name="FinStatementItemDescription" Type="Edm.String" MaxLength="45" sap:label="Text" sap:quickinfo="Text der Bilanz/GuV-Position"
+					sap:creatable="false" sap:updatable="false"/><Property Name="GLAccount" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Sachkonto"
+					sap:quickinfo="Nummer des Sachkontos"/><Property Name="GLAccountLongName" Type="Edm.String" MaxLength="50" sap:label="Sachkontenlangtext" sap:creatable="false"
+					sap:updatable="false"/><Property Name="AccountIsMarkedForDeletion" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Löschvormerkung"
+					sap:quickinfo="Kennzeichen: Konto ist zum Löschen vorgemerkt?"/><Property Name="action" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label=""/><Property Name="check_result" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label=""/><Property Name="saknr_new" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Sachkonto"
+					sap:quickinfo="Nummer des Sachkontos"/><Property Name="not_needed_new" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Sachkto nicht verw."
+					sap:quickinfo="Sachkonto in Produktivsystem nicht verwendet"/><Property Name="HierarchyNodeDescription" Type="Edm.String" MaxLength="50"/><Property Name="IsDebitBalanceRelevant" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Sollsaldo"
+					sap:quickinfo="Kennzeichen: Eintrag ist bei Sollsaldo relevant ?"/><Property Name="IsCreditBalanceRelevant" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Habensaldo"
+					sap:quickinfo="Kennzeichen: Eintrag ist bei Habensaldo relevant ?"/><Property Name="HierarchyNode" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="Id"
+					sap:quickinfo="Intern: Id eines Knotens"/><Property Name="FunctionalArea" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:label="Funktionsbereich"/><Property Name="FinancialStatementItem" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Bil/GuV-Pos."
+					sap:quickinfo="Bilanz/GuV-Position"/><Property Name="FinStatementHierarchyLevelVal" Type="Edm.Int32"/><Property Name="NodeType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Typ" sap:quickinfo="Knotentyp"/><Property Name="SemanticTag" Type="Edm.String" MaxLength="1333"/></EntityType>
+			<ComplexType Name="DummyFunctionImportResult"><Property Name="IsInvalid" Type="Edm.Boolean" sap:label="TRUE"/></ComplexType>
+			<EntityContainer Name="cds_zjs_adopt_coa_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true"
+				sap:supported-formats="atom json xlsx"><EntitySet Name="I_FsvHierarchyInCoa" EntityType="cds_zjs_adopt_coa.I_FsvHierarchyInCoaType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="AdoptCoA" EntityType="cds_zjs_adopt_coa.AdoptCoAType" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:searchable="true" sap:content-version="1"/>
+				<FunctionImport Name="activate" ReturnType="cds_zjs_adopt_coa.DummyFunctionImportResult" m:HttpMethod="POST"
+					sap:action-for="cds_zjs_adopt_coa.AdoptCoAType"><Parameter Name="HierarchyNodeUniqueID" Type="Edm.String" Mode="In" MaxLength="50"/><Parameter Name="FinancialStatementVariant" Type="Edm.String" Mode="In" MaxLength="4"/><Parameter Name="ChartOfAccounts" Type="Edm.String" Mode="In" MaxLength="4"/></FunctionImport>
+				<FunctionImport Name="discard" ReturnType="cds_zjs_adopt_coa.DummyFunctionImportResult" m:HttpMethod="POST"
+					sap:action-for="cds_zjs_adopt_coa.AdoptCoAType"><Parameter Name="HierarchyNodeUniqueID" Type="Edm.String" Mode="In" MaxLength="50"/><Parameter Name="FinancialStatementVariant" Type="Edm.String" Mode="In" MaxLength="4"/><Parameter Name="ChartOfAccounts" Type="Edm.String" Mode="In" MaxLength="4"/></FunctionImport>
+				<FunctionImport Name="download" ReturnType="cds_zjs_adopt_coa.DummyFunctionImportResult" m:HttpMethod="POST"
+					sap:action-for="cds_zjs_adopt_coa.AdoptCoAType"><Parameter Name="HierarchyNodeUniqueID" Type="Edm.String" Mode="In" MaxLength="50"/><Parameter Name="FinancialStatementVariant" Type="Edm.String" Mode="In" MaxLength="4"/><Parameter Name="ChartOfAccounts" Type="Edm.String" Mode="In" MaxLength="4"/></FunctionImport>
+				<FunctionImport Name="renumber" ReturnType="cds_zjs_adopt_coa.DummyFunctionImportResult" m:HttpMethod="POST"
+					sap:action-for="cds_zjs_adopt_coa.AdoptCoAType"><Parameter Name="HierarchyNodeUniqueID" Type="Edm.String" Mode="In" MaxLength="50"/><Parameter Name="FinancialStatementVariant" Type="Edm.String" Mode="In" MaxLength="4"/><Parameter Name="ChartOfAccounts" Type="Edm.String" Mode="In" MaxLength="4"/></FunctionImport>
+				<FunctionImport Name="upload" ReturnType="cds_zjs_adopt_coa.DummyFunctionImportResult" m:HttpMethod="POST"
+					sap:action-for="cds_zjs_adopt_coa.AdoptCoAType"><Parameter Name="HierarchyNodeUniqueID" Type="Edm.String" Mode="In" MaxLength="50"/><Parameter Name="FinancialStatementVariant" Type="Edm.String" Mode="In" MaxLength="4"/><Parameter Name="ChartOfAccounts" Type="Edm.String" Mode="In" MaxLength="4"/></FunctionImport>
+			</EntityContainer>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zjs_adopt_coa.AdoptCoAType/FinancialStatementVariant">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Bilanz/GuV-Struktur"/><PropertyValue Property="CollectionPath" String="I_FsvHierarchyInCoa"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="FinancialStatementVariant"/><PropertyValue Property="ValueListProperty" String="FinancialStatementVariant"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="HierarchyNodeUniqueID"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ChartOfAccounts"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ParentNodeUniqueID"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="FinancialStatementItem"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="GLAccount"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="FunctionalArea"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="FinStatementHierarchyLevelVal"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="NodeType"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="HierarchyNodeDescription"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="IsDebitBalanceRelevant"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="IsCreditBalanceRelevant"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="OffsettingItem"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="HierarchyNode"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="SiblingNode"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="GLAcctHierarchyNodeCategory"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="DrillDownIsImpossible"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CorporateGroupAccount"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CorporateGroupChartOfAccounts"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="SemanticTag"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zjs_adopt_coa.AdoptCoAType/ChartOfAccounts">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Kontenplan"/><PropertyValue Property="CollectionPath" String="I_FsvHierarchyInCoa"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="ChartOfAccounts"/><PropertyValue Property="ValueListProperty" String="ChartOfAccounts"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="HierarchyNodeUniqueID"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="FinancialStatementVariant"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ParentNodeUniqueID"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="FinancialStatementItem"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="GLAccount"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="FunctionalArea"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="FinStatementHierarchyLevelVal"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="NodeType"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="HierarchyNodeDescription"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="IsDebitBalanceRelevant"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="IsCreditBalanceRelevant"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="OffsettingItem"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="HierarchyNode"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="SiblingNode"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="GLAcctHierarchyNodeCategory"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="DrillDownIsImpossible"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CorporateGroupAccount"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CorporateGroupChartOfAccounts"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="SemanticTag"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zjs_adopt_coa.cds_zjs_adopt_coa_Entities"><Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+				<Annotation Term="Aggregation.ApplySupported">
+					<Record>
+						<PropertyValue Property="Transformations">
+							<Collection>
+								<String>aggregate</String>
+								<String>groupby</String>
+								<String>filter</String>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Rollup" EnumMember="None"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zjs_adopt_coa.cds_zjs_adopt_coa_Entities/AdoptCoA">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties"><Collection/></PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties"><Collection/></PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zjs_adopt_coa.cds_zjs_adopt_coa_Entities">
+				<Annotation Term="Org.OData.Capabilities.V1.BatchSupport">
+					<Record Type="Org.OData.Capabilities.V1.BatchSupportType"><PropertyValue Property="ReferencesAcrossChangeSetsSupported" Bool="true"/></Record>
+				</Annotation>
+			</Annotations><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZJS_UI_ADOPTCOA_U_V2/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZJS_UI_ADOPTCOA_U_V2/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
