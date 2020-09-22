@@ -1,0 +1,41 @@
+{
+	"fileName": "id_1597410048429_81_propertyChange",
+	"fileType": "change",
+	"changeType": "propertyChange",
+	"moduleName": "",
+	"reference": "Prototype_AdoptCoA.Component",
+	"packageName": "$TMP",
+	"content": {
+		"property": "useExportToExcel",
+		"newValue": false
+	},
+	"selector": {
+		"id": "Prototype_AdoptCoA::sap.suite.ui.generic.template.ListReport.view.ListReport::AdoptCoA--listReport",
+		"type": "sap.ui.comp.smarttable.SmartTable",
+		"idIsLocal": false
+	},
+	"layer": "VENDOR",
+	"texts": {},
+	"namespace": "apps/Prototype_AdoptCoA/changes/",
+	"projectId": "Prototype_AdoptCoA",
+	"creation": "2020-08-14T13:01:30.073Z",
+	"originalLanguage": "DE",
+	"support": {
+		"generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.80.0",
+		"sourceChangeFileName": "",
+		"compositeCommand": ""
+	},
+	"oDataInformation": {},
+	"dependentSelector": {},
+	"validAppVersions": {
+		"creation": "${project.version}",
+		"from": "${project.version}",
+		"to": "${project.version}"
+	},
+	"jsOnly": false,
+	"variantReference": "",
+	"appDescriptorChange": false
+}

@@ -1,0 +1,41 @@
+{
+	"fileName": "id_1599642853021_66_propertyChange",
+	"fileType": "change",
+	"changeType": "propertyChange",
+	"moduleName": "",
+	"reference": "Prototype_AdoptCoA.Component",
+	"packageName": "$TMP",
+	"content": {
+		"property": "mode",
+		"newValue": "MultiSelect"
+	},
+	"selector": {
+		"id": "Prototype_AdoptCoA::sap.suite.ui.generic.template.ListReport.view.ListReport::AdoptCoA--responsiveTable",
+		"type": "sap.m.Table",
+		"idIsLocal": false
+	},
+	"layer": "VENDOR",
+	"texts": {},
+	"namespace": "apps/Prototype_AdoptCoA/changes/",
+	"projectId": "Prototype_AdoptCoA",
+	"creation": "2020-09-09T09:14:16.445Z",
+	"originalLanguage": "EN",
+	"support": {
+		"generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.81.0",
+		"sourceChangeFileName": "",
+		"compositeCommand": ""
+	},
+	"oDataInformation": {},
+	"dependentSelector": {},
+	"validAppVersions": {
+		"creation": "${project.version}",
+		"from": "${project.version}",
+		"to": "${project.version}"
+	},
+	"jsOnly": false,
+	"variantReference": "",
+	"appDescriptorChange": false
+}
