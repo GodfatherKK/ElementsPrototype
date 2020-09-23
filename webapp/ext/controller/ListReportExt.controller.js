@@ -1,7 +1,7 @@
 
 sap.ui.controller("Prototype_AdoptCoA.ext.controller.ListReportExt", {
 
-
+//test
 
 	onInit: function() {
 		
