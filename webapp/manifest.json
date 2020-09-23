@@ -166,14 +166,14 @@
 									"ActionAdoptCoA1": {
 										"id": "ActionAdoptCoA1button",
 										"text": "{@i18n>ActionAdoptCoA1}",
-										"press": "onUpload",
+										"press": "onClickActionAdoptCoA1",
 										"requiresSelection": false,
 										"applicablePath": false
 									},
 									"ActionAdoptCoA2": {
 										"id": "ActionAdoptCoA2button",
 										"text": "{@i18n>ActionAdoptCoA2}",
-										"press": "onDownload",
+										"press": "onClickActionAdoptCoA2",
 										"requiresSelection": false
 									},
 									"ActionAdoptCoA3": {

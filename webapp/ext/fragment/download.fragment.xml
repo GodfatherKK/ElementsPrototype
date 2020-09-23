@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:u="sap.ui.unified" xmlns:l="sap.ui.layout">
+	<Dialog id="downloadDlg" title="Download to Excel" contentWidth="15%" contentHeight="20%" afterClose="onAfterDownloadClose">
+		<content>
+			<l:VerticalLayout>
+				<u:FileUploader id="fileDownloader" name="myFileDownload" uploadUrl="download/" tooltip="Download your file"
+					downloadComplete="handleDownloadComplete"/>
+				<Button text="Download File" press="handleDownloadPress"/>
+			</l:VerticalLayout>
+		</content>
+		<endButton>
+			<Button text="Close" press="onCloseDownloadDialog"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>
