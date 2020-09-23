@@ -153,7 +153,8 @@ sap.ui.controller("Prototype_AdoptCoA.ext.controller.ListReportExt", {
           
 	      //var oImage = new Image();
 		  //oImage.src = data.toString();
-
+		  
+			//joerg 1
 		  
 		  sap.m.MessageBox.show(data);
 		  
