@@ -14,7 +14,7 @@ sap.ui.controller("Prototype_AdoptCoA.ext.controller.ListReportExt", {
 		this.onClickActionAdoptCoA1();
 
 	},
-	
+	 //JT Change
 	
 	onUpload: function (oEvent) {
 		
