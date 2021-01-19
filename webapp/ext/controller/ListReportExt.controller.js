@@ -516,8 +516,21 @@ sap.ui.controller("Prototype_AdoptCoA.ext.controller.ListReportExt", {
 		var oFilterData = this.getView().byId(
 			"Prototype_AdoptCoA::sap.suite.ui.generic.template.ListReport.view.ListReport::AdoptCoA--listReportFilter").getFilterData();
 		var CoA = oFilterData.ChartOfAccounts.value;
+		if ( CoA === null ) {
+//	    	var CoAR = oFilterData.ChartOfAccounts.ranges;
+//		    var CoA0 = CoAR[0];
+//		    CoA = CoA0.value1;
+		    CoA = oFilterData.ChartOfAccounts.ranges[0].value1;
+		};
+		
 		var FSV = oFilterData.FinancialStatementVariant.value;
-
+		if ( FSV === null ) {
+//	    	var FSVR = oFilterData.FinancialStatementVariant.ranges;
+//		    var FSV0 = FSVR[0];
+//		    FSV = FSV0.value1;
+		    FSV = oFilterData.FinancialStatementVariant.ranges[0].value1;
+		};	
+		
 		// fill the parameters
 		var mParameters = {
 			"versn": FSV,

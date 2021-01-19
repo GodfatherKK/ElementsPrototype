@@ -1,0 +1,38 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="/sap/opu/odata/sap/ZJS_UI_ADOPTCOA_U_V2/$metadata">
+		<edmx:Include Alias="Metadata" Namespace="cds_zjs_adopt_coa"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470968/UI.xml?api=v2">
+		<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470974/Common.xml?api=v2">
+		<edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<!--<EntityType Name="AdoptCoAType" sap:label="ZJS: " Consumption" View Adopt CoA" sap:content-version="1">-->
+		<!--	<Property Name="HierarchyNodeUniqueID" Type="Edm.String" MaxLength="50" Nullable="false"                sap:hierarchy-node-for="HierarchyNodeUniqueID"/>-->
+		<!--	<Property Name="FinStatementHierarchyLevelVal" Type="Edm.Int32" Nullable="false"                        sap:hierarchy-level-for="HierarchyNodeUniqueID"/>-->
+		<!--	<Property Name="ParentNodeUniqueID" Type="Edm.String" MaxLength="50" Nullable="false"                   sap:hierarchy-parent-node-for="HierarchyNodeUniqueID"/>-->
+		<!--	<Property Name="DrillDownIsImpossible" Type="Edm.String" MaxLength="10" Nullable="false" Unicode="true" sap:hierarchy-drill-state-for="HierarchyNodeUniqueID"/>-->
+		<!--</EntityType>-->
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ElementsPrototype.ext.annotations.annotation1.cds_zjs_adopt_coa">
+			<Annotations Target="Metadata.AdoptCoAType">
+				<Annotation Term="UI.Identification" Qualifier="HierarchyNodeUniqueID">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="HierarchyNodeUniqueID">
+								<Annotation Term="Common.RecursiveHierarchy" Qualifier="HierarchyNodeUniqueID">
+									<Record Type="Common.RecursiveHierarchyType">
+										<PropertyValue Property="NodeDrillStateProperty" PropertyPath="DrillDownIsImpossible"/>
+										<PropertyValue Property="ExternalNodeKeyProperty" PropertyPath="ParentNodeUniqueID"/>
+										<PropertyValue Property="NodeDescendantCountProperty" PropertyPath="FinStatementHierarchyLevelVal"/>
+									</Record>
+								</Annotation>
+							</PropertyValue>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

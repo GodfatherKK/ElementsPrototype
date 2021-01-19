@@ -20,7 +20,8 @@
 				"type": "OData",
 				"settings": {
 					"annotations": [
-						"ZJS_UI_ADOPTCOA_U_V2_VAN"
+						"ZJS_UI_ADOPTCOA_U_V2_VAN",
+						"annotation1"
 					],
 					"localUri": "localService/metadata.xml"
 				}
@@ -30,6 +31,13 @@
 				"type": "ODataAnnotation",
 				"settings": {
 					"localUri": "localService/ZJS_UI_ADOPTCOA_U_V2_VAN.xml"
+				}
+			},
+			"annotation1": {
+				"type": "ODataAnnotation",
+				"uri": "ext/annotations/annotation1.xml",
+				"settings": {
+					"localUri": "ext/annotations/annotation1.xml"
 				}
 			}
 		},
@@ -52,7 +60,7 @@
 		"deviceTypes": {
 			"desktop": true,
 			"tablet": true,
-			"phone": true
+			"phone": false
 		},
 		"supportedThemes": [
 			"sap_fiori_3"
@@ -216,13 +224,17 @@
 		"pages": {
 			"ListReport|AdoptCoA": {
 				"entitySet": "AdoptCoA",
-				
 				"component": {
 					"name": "sap.suite.ui.generic.template.ListReport",
 					"list": true,
 					"settings": {
 						"smartVariantManagement": true,
-						"condensedTableLayout": true
+						"condensedTableLayout": true,
+						"tableSettings": {
+							"type": "TreeTable",
+							"multiSelect": true,
+							"selectAll": false
+						}
 					}
 				},
 				"pages": {
