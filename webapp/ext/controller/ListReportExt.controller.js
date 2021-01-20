@@ -3,6 +3,7 @@ sap.ui.controller("Prototype_AdoptCoA.ext.controller.ListReportExt", {
 	//******************
 	/*  onInit        */
 	//******************
+	
 	onInit: function () {
 
 		this.getOwnerComponent().getAppComponent().setExtensionAPI(this.extensionAPI);
@@ -24,9 +25,16 @@ sap.ui.controller("Prototype_AdoptCoA.ext.controller.ListReportExt", {
 	//********************
 	/*  Template Events */
 	//********************
-	onBeforeRebindTableExtension: function () {
-		//var oView = this.getView();
-		// var oRespTab = this.byId("responsiveTable");
+	onBeforeRebindTableExtension: function (event) {
+
+		var oBindingParams = event.getParameter("bindingParams");
+		oBindingParams.parameters.treeAnnotationProperties = {
+			hierarchyNodeFor: "HierarchyNodeUniqueID",
+			hierarchyParentNodeFor: "ParentNodeUniqueID",
+			hierarchyLevelFor: "FinStatementHierarchyLevelVal",
+			hierarchyDrillStateFor: "DrillDownIsImpossible"
+		};		
+
 		this._setButtons();
 	},
 	onBeforeRendering: function () {
